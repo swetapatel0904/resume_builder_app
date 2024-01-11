@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:resume_maker_app/utils/global.dart';
 
 class CarrierScreen extends StatefulWidget {
   const CarrierScreen({super.key});
@@ -25,7 +26,7 @@ class _CarrierScreenState extends State<CarrierScreen> {
     ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.all(30),
           child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -48,6 +49,8 @@ class _CarrierScreenState extends State<CarrierScreen> {
                   },
                   onFieldSubmitted: (value) {
                     String carrier = value!;
+                    dataList.add(value!);
+                    print(dataList);
                   },
                   maxLines: 5,
                   decoration: InputDecoration(
@@ -77,8 +80,10 @@ class _CarrierScreenState extends State<CarrierScreen> {
                   },
                   onFieldSubmitted: (value) {
                     String designation = value!;
+                    dataList.add(value!);
+                    print(dataList);
                   },
-                  maxLines: 2,
+                  maxLines: 1,
                   decoration: InputDecoration(
                       border: OutlineInputBorder(borderSide: BorderSide(width: 2,)),
                       hintText: "Software Engineer"
