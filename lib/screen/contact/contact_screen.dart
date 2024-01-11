@@ -197,13 +197,14 @@ GlobalKey<FormState>key = GlobalKey<FormState>();
                 dataList.add(email);
                 dataList.add(mobile);
                 dataList.add(address);
-              }
-              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Data is saved")));
 
-              txtName.clear();
-              txtEmail.clear();
-              txtMobile.clear();
-              txtAddress.clear();
+                print(dataList);
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Data is saved")));
+
+              }
+
+
+
 
               }, child: Text("Submit")
             )
