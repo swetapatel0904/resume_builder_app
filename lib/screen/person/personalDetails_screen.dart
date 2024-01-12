@@ -61,11 +61,7 @@ class _PersonalDetailsScreenState extends State<PersonalDetailsScreen> {
                                }
                                return null;
                              },
-                             onFieldSubmitted: (value) {
-                               String dob = value!;
-                               dataList.add(value!);
-                               print(dataList);
-                             },
+
                           controller: txtDob,
                           decoration: const InputDecoration(
                           border: OutlineInputBorder(),
@@ -183,11 +179,7 @@ class _PersonalDetailsScreenState extends State<PersonalDetailsScreen> {
                                }
                                return null;
                              },
-                             onFieldSubmitted: (value) {
-                               String nationality = value!;
-                               dataList.add(value!);
-                               print(dataList);
-                             },
+
                           controller: txtNationality,
                             decoration: const InputDecoration(
                                 border: OutlineInputBorder(),
@@ -202,7 +194,7 @@ class _PersonalDetailsScreenState extends State<PersonalDetailsScreen> {
                                 onPressed: () {
                                   String dob = txtDob.text;
                                   String nationality = txtNationality.text;
-                                  String? lan1,lan2,lan3;
+                                  String? lan1="",lan2="",lan3="";
                                   if(isEnglish)
                                     {
                                       lan1 = "English";
@@ -215,14 +207,17 @@ class _PersonalDetailsScreenState extends State<PersonalDetailsScreen> {
                                     {
                                       lan3 = "Gujarati";
                                     }
-                                  dataList.add(dob);
-                                  dataList.add(nationality);
-                                  dataList.add(lan1);
-                                  dataList.add(lan2);
-                                  dataList.add(lan3);
+
+                                  dataList[2]['dob']=dob;
+                                  dataList[2]['marital']=selectedGroupValue;
+                                  dataList[2]['language']=[lan1,lan2,lan3];
+                                  dataList[2]['nationality']=nationality;
+
+
 
                                   ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Data added successfully")));
-
+                                    txtDob.clear();
+                                    txtNationality.clear();
 
                                 },
                                 child: const Text(

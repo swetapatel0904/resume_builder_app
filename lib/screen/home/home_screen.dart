@@ -44,6 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
               resumeList(title: "Achievements", image: Icons.add_chart_outlined,route:'achievements'),
               resumeList(title: "References", image: Icons.room_preferences_outlined,route:'reference'),
               resumeList(title: "Declaration",image: Icons.deck_outlined,route:'declaration'),
+              resumeList(title: "Resume",image: Icons.receipt_long_outlined,route:'resume'),
             ],
           ),
     )

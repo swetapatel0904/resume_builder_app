@@ -33,10 +33,7 @@ class _TechnicalSkillsScreenState extends State<TechnicalSkillsScreen> {
                   Column(
                     children: List.generate(controllerList.length, (index) => TextFormField(
                       controller:controllerList[index] ,
-                      onFieldSubmitted: (value) {
-                        dataList.add(value);
-                        print(dataList);
-                      },
+
                       decoration: InputDecoration(
                         suffixIcon: IconButton(
                             onPressed: (){
@@ -56,7 +53,18 @@ class _TechnicalSkillsScreenState extends State<TechnicalSkillsScreen> {
                     setState(() {
                       controllerList.add(TextEditingController());
                     });
-                  }, child:Text("ADD"))
+                  }, child:Text("ADD")),
+                  ElevatedButton(onPressed: () {
+                    setState(() {
+                      for(int i=0;i<controllerList.length;i++)
+                        {
+                           String skill = controllerList[i].text;
+                        }
+                      dataList[4]['skill']= [];
+
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Data is saved")));
+                    });
+                  }, child:Text("Save"))
                 ],
               ),
             ),

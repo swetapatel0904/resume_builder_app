@@ -47,11 +47,7 @@ class _EducationScreenState extends State<EducationScreen> {
                       }
                       return null;
                     },
-                    onFieldSubmitted: (value) {
-                      String course = value!;
-                      dataList.add(value!);
-                      print(dataList);
-                    },
+
                    
                     decoration: InputDecoration(
                         border: OutlineInputBorder(borderSide: BorderSide(width: 2,)),
@@ -79,11 +75,7 @@ class _EducationScreenState extends State<EducationScreen> {
                       }
                       return null;
                     },
-                    onFieldSubmitted: (value) {
-                      String school = value!;
-                      dataList.add(value!);
-                      print(dataList);
-                    },
+
 
                     decoration: InputDecoration(
                       border: OutlineInputBorder(borderSide: BorderSide(width: 2,)),
@@ -111,11 +103,7 @@ class _EducationScreenState extends State<EducationScreen> {
                       }
                       return null;
                     },
-                    onFieldSubmitted: (value) {
-                      String grade = value!;
-                      dataList.add(value!);
-                      print(dataList);
-                    },
+
 
                     decoration: InputDecoration(
                       border: OutlineInputBorder(borderSide: BorderSide(width: 2,)),
@@ -142,12 +130,6 @@ class _EducationScreenState extends State<EducationScreen> {
                         return "required";
                       }
                       return null;
-                    },
-                    onFieldSubmitted: (value) {
-                      String year = value!;
-                      dataList.add(value!);
-                      print(dataList);
-
                     },
 
                     decoration: InputDecoration(

@@ -193,19 +193,21 @@ GlobalKey<FormState>key = GlobalKey<FormState>();
                 String mobile = txtMobile.text;
                 String address = txtAddress.text;
 
-                dataList.add(name);
-                dataList.add(email);
-                dataList.add(mobile);
-                dataList.add(address);
+                dataList[0]['name']=name;
+                dataList[0]['email']=email;
+                dataList[0]['mobile']=mobile;
+                dataList[0]['address']=address;
 
-                print(dataList);
+
+
+
                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Data is saved")));
 
               }
-
-
-
-
+                txtName.clear();
+              txtEmail.clear();
+              txtMobile.clear();
+              txtAddress.clear();
               }, child: Text("Submit")
             )
           ],
@@ -240,6 +242,7 @@ GlobalKey<FormState>key = GlobalKey<FormState>();
                     XFile? image = await picker.pickImage(source: ImageSource.camera);
                     setState(() {
                       path=image!.path;
+                      dataList[0]['image']=path;
                     });
 
                   },

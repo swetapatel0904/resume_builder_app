@@ -9,6 +9,8 @@ class CarrierScreen extends StatefulWidget {
 }
 
 class _CarrierScreenState extends State<CarrierScreen> {
+  TextEditingController txtCarrier = TextEditingController();
+  TextEditingController txtDesignation = TextEditingController();
   GlobalKey<FormState> key = GlobalKey<FormState>();
 
   @override
@@ -40,17 +42,13 @@ class _CarrierScreenState extends State<CarrierScreen> {
                   height: 10,
                 ),
                 TextFormField(
+                  controller:  txtCarrier ,
                   validator: (value){
                     if(value!.isEmpty)
                       {
                         return "Description is required";
                       }
                     return null;
-                  },
-                  onFieldSubmitted: (value) {
-                    String carrier = value!;
-                    dataList.add(value!);
-                    print(dataList);
                   },
                   maxLines: 5,
                   decoration: InputDecoration(
@@ -71,6 +69,7 @@ class _CarrierScreenState extends State<CarrierScreen> {
                   height: 10,
                 ),
                 TextFormField(
+                  controller: txtDesignation,
                   validator: (value){
                     if(value!.isEmpty)
                     {
@@ -78,18 +77,29 @@ class _CarrierScreenState extends State<CarrierScreen> {
                     }
                     return null;
                   },
-                  onFieldSubmitted: (value) {
-                    String designation = value!;
-                    dataList.add(value!);
-                    print(dataList);
-                  },
                   maxLines: 1,
                   decoration: InputDecoration(
                       border: OutlineInputBorder(borderSide: BorderSide(width: 2,)),
                       hintText: "Software Engineer"
                   ),
                 ),
+                Center(
+                  child: ElevatedButton(onPressed: (){
+                    if(key.currentState!.validate())
+                      {
+                        String carrier = txtCarrier.text;
+                        String designation = txtDesignation.text;
 
+                        dataList[1]['carrier']=carrier;
+                        dataList[1]['designation']=designation;
+
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Data is saved")));
+
+                      }
+                    txtCarrier.clear();
+                    txtDesignation.clear();
+                  }, child: Text("Save")),
+                )
               ],
           ),
         ),

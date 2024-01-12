@@ -46,11 +46,7 @@ class _ExperienceScreenState extends State<ExperienceScreen> {
                   }
                   return null;
                   },
-                  onFieldSubmitted: (value) {
-                  String course = value!;
-                  dataList.add(value!);
-                  print(dataList);
-                  },
+
 
                   decoration: const InputDecoration(
                   border: OutlineInputBorder(borderSide: BorderSide(width: 2,)),
@@ -78,11 +74,7 @@ class _ExperienceScreenState extends State<ExperienceScreen> {
                   }
                   return null;
                   },
-                  onFieldSubmitted: (value) {
-                  String school = value!;
-                  dataList.add(value!);
-                  print(dataList);
-                  },
+
                     decoration: const InputDecoration(
                   border: OutlineInputBorder(borderSide: BorderSide(width: 2,)),
                   hintText: "Quality Test Designer"
@@ -186,11 +178,7 @@ class _ExperienceScreenState extends State<ExperienceScreen> {
                         }
                         return null;
                       },
-                      onFieldSubmitted: (value) {
-                        String dob = value!;
-                        dataList.add(value!);
-                        print(dataList);
-                      },
+
                       decoration: const InputDecoration(
                           border: OutlineInputBorder(),
                           hintText: "DD/MM/YYYY"
@@ -208,11 +196,7 @@ class _ExperienceScreenState extends State<ExperienceScreen> {
                         }
                         return null;
                       },
-                      onFieldSubmitted: (value) {
-                        String place = value!;
-                        dataList.add(value!);
-                        print(dataList);
-                      },
+
                       decoration: const InputDecoration(
                           border: OutlineInputBorder(),
                           hintText: "DD/MM/YYYY"

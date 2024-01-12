@@ -60,11 +60,7 @@ class _DeclarationScreenState extends State<DeclarationScreen> {
                                   }
                                   return null;
                                 },
-                                onFieldSubmitted: (value) {
-                                  String description = value!;
-                                  dataList.add(value!);
-                                  print(dataList);
-                                },
+
                                 decoration: InputDecoration(
                                     border: OutlineInputBorder(),
                                     hintText: "Description"
@@ -105,11 +101,7 @@ class _DeclarationScreenState extends State<DeclarationScreen> {
                                         }
                                         return null;
                                       },
-                                      onFieldSubmitted: (value) {
-                                        String dob = value!;
-                                        dataList.add(value!);
-                                        print(dataList);
-                                      },
+
                                       decoration: const InputDecoration(
                                           border: OutlineInputBorder(),
                                           hintText: "DD/MM/YYYY"
@@ -127,11 +119,7 @@ class _DeclarationScreenState extends State<DeclarationScreen> {
                                         }
                                         return null;
                                       },
-                                      onFieldSubmitted: (value) {
-                                        String place = value!;
-                                        dataList.add(value!);
-                                        print(dataList);
-                                      },
+
                                       decoration: const InputDecoration(
                                           border: OutlineInputBorder(),
                                           hintText: "Eg.Surat"

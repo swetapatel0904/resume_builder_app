@@ -11,6 +11,7 @@ import '../screen/home/home_screen.dart';
 import '../screen/person/personalDetails_screen.dart';
 import '../screen/project/projects_screen.dart';
 import '../screen/reference/references_screen.dart';
+import '../screen/resume/resume_screen.dart';
 import '../screen/skill/technicalSkills_screen.dart';
 import '../screen/splash/splash_screen.dart';
 
@@ -28,5 +29,6 @@ Map<String,WidgetBuilder> app_route={
   "achievement":(context) => AchievementsScreen(),
   "reference":(context) => ReferencesScreen(),
   "declaration":(context) => DeclarationScreen(),
+  "resume":(context) => ResumeScreen(),
 };
 
