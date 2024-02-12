@@ -83,6 +83,7 @@ class _CarrierScreenState extends State<CarrierScreen> {
                       hintText: "Software Engineer"
                   ),
                 ),
+                SizedBox(height: 10,),
                 Center(
                   child: ElevatedButton(onPressed: (){
                     if(key.currentState!.validate())

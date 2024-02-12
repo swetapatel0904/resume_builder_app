@@ -10,9 +10,9 @@ class ProjectsScreen extends StatefulWidget {
 }
 
 class _ProjectsScreenState extends State<ProjectsScreen> {
-  TextEditingController txtProject = TextEditingController();
+  TextEditingController txtTitle = TextEditingController();
   TextEditingController txtRoles = TextEditingController();
-  TextEditingController txtTechnologies = TextEditingController();
+  TextEditingController txtTechnology = TextEditingController();
   TextEditingController txtDescription = TextEditingController();
   GlobalKey<FormState>key=GlobalKey<FormState>();
   bool isCprogramming = false;
@@ -46,7 +46,7 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
                 height: 10,
               ),
               TextFormField(
-                controller: txtProject,
+                controller: txtTitle,
                 validator: (value) {
                   if (value!.isEmpty) {
                     return "required";
@@ -151,7 +151,7 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
                 height: 10,
               ),
               TextFormField(
-                controller: txtTechnologies,
+                controller: txtTechnology,
                 validator: (value) {
                   if (value!.isEmpty) {
                     return "required";
@@ -197,12 +197,13 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
               Center(
                   child: ElevatedButton(
                       onPressed: () {
-                        if(key.currentState!.validate()) {
-                          String title = txtProject.text;
+                        if(key.currentState!.validate())
+                        {
+                          String title = txtTitle.text;
                           String roles = txtRoles.text;
-                          String technologies = txtTechnologies.text;
+                          String technology = txtTechnology.text;
                           String description = txtDescription.text;
-                          String? tech1, tech2, tech3;
+                          String? tech1="", tech2="", tech3="";
                           if (isCprogramming) {
                             tech1 = "C programming";
                           }
@@ -212,13 +213,20 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
                           if (isFlutter) {
                             tech3 = "Flutter";
                           }
+                          dataList[5]['title']=title;
+                          dataList[5]['technologies']=[tech1,tech2,tech3];
+                          dataList[5]['roles']=roles;
+                          dataList[5]['technology']=technology;
+                          dataList[5]['description']=description;
 
                         }
+
+
                         ScaffoldMessenger.of(context).showSnackBar( SnackBar(
                             content: Text("Data added successfully")));
-                        txtProject.clear();
+                        txtTitle.clear();
                         txtRoles.clear();
-                        txtTechnologies.clear();
+                        txtTechnology.clear();
                         txtDescription.clear();
 
 

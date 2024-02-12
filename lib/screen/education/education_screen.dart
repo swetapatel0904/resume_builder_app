@@ -11,6 +11,10 @@ class EducationScreen extends StatefulWidget {
 
 class _EducationScreenState extends State<EducationScreen> {
   GlobalKey<FormState> key = GlobalKey<FormState>();
+  TextEditingController txtCourse = TextEditingController();
+  TextEditingController txtInstitute = TextEditingController();
+  TextEditingController txtGrade = TextEditingController();
+  TextEditingController txtYear = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -25,7 +29,7 @@ class _EducationScreenState extends State<EducationScreen> {
       ),
         body: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.all(30),
+            padding: const EdgeInsets.all(30),
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -40,6 +44,7 @@ class _EducationScreenState extends State<EducationScreen> {
                 height: 10,
               ),
                   TextFormField(
+                    controller: txtCourse,
                     validator: (value){
                       if(value!.isEmpty)
                       {
@@ -49,7 +54,7 @@ class _EducationScreenState extends State<EducationScreen> {
                     },
 
                    
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                         border: OutlineInputBorder(borderSide: BorderSide(width: 2,)),
                        hintText: "B. Tech Information Technology"
                     ),
@@ -68,6 +73,7 @@ class _EducationScreenState extends State<EducationScreen> {
                     height: 10,
                   ),
                   TextFormField(
+                    controller: txtInstitute,
                     validator: (value){
                       if(value!.isEmpty)
                       {
@@ -77,7 +83,7 @@ class _EducationScreenState extends State<EducationScreen> {
                     },
 
 
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       border: OutlineInputBorder(borderSide: BorderSide(width: 2,)),
                         hintText: "Bhagwan Mahavir University"
                     ),
@@ -96,6 +102,7 @@ class _EducationScreenState extends State<EducationScreen> {
                     height: 10,
                   ),
                   TextFormField(
+                    controller: txtGrade,
                     validator: (value){
                       if(value!.isEmpty)
                       {
@@ -103,9 +110,7 @@ class _EducationScreenState extends State<EducationScreen> {
                       }
                       return null;
                     },
-
-
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       border: OutlineInputBorder(borderSide: BorderSide(width: 2,)),
                         hintText: "70% (or) 7.0 CGPA"
                     ),
@@ -124,6 +129,7 @@ class _EducationScreenState extends State<EducationScreen> {
                     height: 10,
                   ),
                   TextFormField(
+                    controller: txtYear,
                     validator: (value){
                       if(value!.isEmpty)
                       {
@@ -132,11 +138,36 @@ class _EducationScreenState extends State<EducationScreen> {
                       return null;
                     },
 
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       border: OutlineInputBorder(borderSide: BorderSide(width: 2,)),
                         hintText: "2019"
                     ),
                   ),
+                  SizedBox(height: 10,),
+                  Center(
+                    child: ElevatedButton(onPressed: (){
+                      if(key.currentState!.validate())
+                      {
+                        String course = txtCourse.text;
+                        String institute = txtInstitute.text;
+                        String grade = txtGrade.text;
+                        String year = txtYear.text;
+
+                        dataList[3]['course']=course;
+                        dataList[3]['institute']=institute;
+                        dataList[3]['grade']=grade;
+                        dataList[3]['year']=year;
+
+
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Data is saved")));
+
+                      }
+                      txtCourse.clear();
+                      txtInstitute.clear();
+                      txtGrade.clear();
+                      txtYear.clear();
+                    }, child: Text("Save")),
+                  )
                 ]
           ),
       ),

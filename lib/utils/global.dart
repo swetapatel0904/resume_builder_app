@@ -3,5 +3,7 @@ List<Map> dataList=[
   {"carrier":"","designation":""},
   {"dob":"","marital":"","language":[],"nationality":""},
   {"course":"","institute":"","grade":"","year":""},
-  {"skill":""},
+  {"company":"","institute":"","roles":"","status":""},
+  {"title":"","technologies":[],"roles":"","technology":"","description":""},
+
 ];

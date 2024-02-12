@@ -24,12 +24,12 @@ class _TechnicalSkillsScreenState extends State<TechnicalSkillsScreen> {
           child: Align(
             alignment: Alignment.topCenter,
             child: Container(
-              padding: EdgeInsets.only(top: 30),
+              padding: const EdgeInsets.only(top: 30),
               width: MediaQuery.sizeOf(context).width*0.80,
               child: Column(
                 children: [
-                  Text("Enter your skills",style: TextStyle(fontSize: 18)),
-                  SizedBox(height: 10,),
+                  const Text("Enter your skills",style: TextStyle(fontSize: 18)),
+                  const SizedBox(height: 10,),
                   Column(
                     children: List.generate(controllerList.length, (index) => TextFormField(
                       controller:controllerList[index] ,
@@ -42,29 +42,29 @@ class _TechnicalSkillsScreenState extends State<TechnicalSkillsScreen> {
 
                               });
                             },
-                            icon:  Icon(Icons.delete)),
+                            icon:  const Icon(Icons.delete)),
                         hintText: "c programming",
                       ),
                     ),
                     ),
                   ),
-                  SizedBox(height: 20,),
+                  const SizedBox(height: 20,),
                   ElevatedButton(onPressed: () {
                     setState(() {
                       controllerList.add(TextEditingController());
                     });
-                  }, child:Text("ADD")),
+                  }, child:const Text("ADD")),
                   ElevatedButton(onPressed: () {
                     setState(() {
-                      for(int i=0;i<controllerList.length;i++)
-                        {
-                           String skill = controllerList[i].text;
-                        }
-                      dataList[4]['skill']= [];
-
-                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Data is saved")));
-                    });
-                  }, child:Text("Save"))
+                    //   for(int i=0;i<controllerList.length;i++)
+                    //     {
+                    //        List <String>skill = [controllerList[i].text];
+                    //     }
+                    //   dataList[4]['skill']= [];
+                    //
+                    //   ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Data is saved")));
+                     });
+                  }, child:const Text("Save"))
                 ],
               ),
             ),

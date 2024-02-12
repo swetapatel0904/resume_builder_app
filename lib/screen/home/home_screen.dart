@@ -39,7 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
               resumeList(title: "Education", image: Icons.cast_for_education_outlined,route:'education'),
               resumeList(title: "Experiences", image: Icons.book,route:'experience'),
               resumeList(title: "Technical Skills", image: Icons.computer_outlined,route:'skills'),
-              resumeList(title: "Hobbies", image: Icons.skateboarding_outlined,route:'hobbies'),
+              resumeList(title: "Hobbies", image: Icons.skateboarding_outlined,route:'hobby'),
               resumeList(title: "Projects", image: Icons.padding_outlined,route:'projects'),
               resumeList(title: "Achievements", image: Icons.add_chart_outlined,route:'achievements'),
               resumeList(title: "References", image: Icons.room_preferences_outlined,route:'reference'),
